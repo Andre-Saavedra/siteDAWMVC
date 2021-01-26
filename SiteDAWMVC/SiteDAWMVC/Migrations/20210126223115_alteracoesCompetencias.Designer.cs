@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SiteDAWMVC.Data;
 
 namespace SiteDAWMVC.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    partial class SiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210126223115_alteracoesCompetencias")]
+    partial class alteracoesCompetencias
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,27 +90,7 @@ namespace SiteDAWMVC.Migrations
                     b.ToTable("DadosPessoais");
                 });
 
-            modelBuilder.Entity("SiteDAWMVC.Models.Experiencia", b =>
-                {
-                    b.Property<int>("ExperienciaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("DadosPessoaisId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ExperienciaId");
-
-                    b.HasIndex("DadosPessoaisId");
-
-                    b.ToTable("Experiencia");
-                });
-
-            modelBuilder.Entity("SiteDAWMVC.Models.Formacao", b =>
+            modelBuilder.Entity("SiteDAWMVC.Models.FormacaoExperiencia", b =>
                 {
                     b.Property<int>("FormacaoExperienciaId")
                         .ValueGeneratedOnAdd()
@@ -118,14 +100,17 @@ namespace SiteDAWMVC.Migrations
                     b.Property<int>("DadosPessoaisId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Nome")
+                    b.Property<int>("Experiencia")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Formacao")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FormacaoExperienciaId");
 
                     b.HasIndex("DadosPessoaisId");
 
-                    b.ToTable("Formacao");
+                    b.ToTable("FormacaoExperiencia");
                 });
 
             modelBuilder.Entity("SiteDAWMVC.Models.CompetenciasDigitais", b =>
@@ -150,18 +135,7 @@ namespace SiteDAWMVC.Migrations
                     b.Navigation("DadosPessoais");
                 });
 
-            modelBuilder.Entity("SiteDAWMVC.Models.Experiencia", b =>
-                {
-                    b.HasOne("SiteDAWMVC.Models.DadosPessoais", "DadosPessoais")
-                        .WithMany()
-                        .HasForeignKey("DadosPessoaisId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DadosPessoais");
-                });
-
-            modelBuilder.Entity("SiteDAWMVC.Models.Formacao", b =>
+            modelBuilder.Entity("SiteDAWMVC.Models.FormacaoExperiencia", b =>
                 {
                     b.HasOne("SiteDAWMVC.Models.DadosPessoais", "DadosPessoais")
                         .WithMany()

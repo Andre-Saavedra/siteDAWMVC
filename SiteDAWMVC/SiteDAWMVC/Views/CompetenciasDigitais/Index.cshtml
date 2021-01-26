@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SiteDAWMVC.Models.CompetenciasDigitais>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Linguagem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DadosPessoais)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Linguagem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DadosPessoais.DadosPessoaisId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CompetenciasDigitaisId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CompetenciasDigitaisId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CompetenciasDigitaisId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

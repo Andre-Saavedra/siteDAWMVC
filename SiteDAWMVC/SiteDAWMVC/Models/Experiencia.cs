@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace SiteDAWMVC.Models
 {
-    public class CompetenciasPessoais
+    public class Experiencia
     {
         [Key]
-        public int CompetenciasPessoaisId { get; set; }
+        public int ExperienciaId { get; set; }
 
-        public string Comptencia { get; set; }
-
-        public int Observacoes { get; set; }
+        public string Nome { get; set; }
 
         public int DadosPessoaisId { get; set; }
         public DadosPessoais DadosPessoais { get; set; }

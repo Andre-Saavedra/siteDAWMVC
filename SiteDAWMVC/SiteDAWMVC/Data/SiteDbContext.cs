@@ -15,9 +15,11 @@ namespace SiteDAWMVC.Data
         }
 
         public DbSet<DadosPessoais> DadosPessoais { get; set; }
-        public DbSet<FormacaoExperiencia> FormacaoExperiencia { get; set; }
+        public DbSet<Formacao> FormacaoExperiencia { get; set; }
         public DbSet<CompetenciasPessoais> CompetenciasPessoais { get; set; }
         public DbSet<CompetenciasDigitais> CompetenciasDigitais { get; set; }
+        public DbSet<Experiencia> Experiencia { get; set; }
+        public DbSet<Formacao> Formacao { get; set; }
 
     }
 }
