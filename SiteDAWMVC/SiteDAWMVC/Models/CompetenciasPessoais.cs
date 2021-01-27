@@ -11,9 +11,11 @@ namespace SiteDAWMVC.Models
         [Key]
         public int CompetenciasPessoaisId { get; set; }
 
+        [Display(Name ="Competência")]
         public string Comptencia { get; set; }
 
-        public int Observacoes { get; set; }
+        [Display(Name ="Observações")]
+        public string Observacoes { get; set; }
 
         public int DadosPessoaisId { get; set; }
         public DadosPessoais DadosPessoais { get; set; }

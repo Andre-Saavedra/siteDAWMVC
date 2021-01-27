@@ -12,9 +12,10 @@ namespace SiteDAWMVC.Models
         public int CompetenciasDigitaisId { get; set; }
 
         
-        public int Linguagem { get; set; }
+        public string Linguagem { get; set; }
 
-        public int Nivel { get; set; }
+        [Display(Name ="Nível")]
+        public string Nivel { get; set; }
 
         public int DadosPessoaisId { get; set; }
         public DadosPessoais DadosPessoais { get; set; }
