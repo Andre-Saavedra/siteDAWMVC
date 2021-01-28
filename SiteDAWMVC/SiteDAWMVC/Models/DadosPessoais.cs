@@ -18,7 +18,7 @@ namespace SiteDAWMVC.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "O campo deve ser preenchido")]
-        [RegularExpression(@"(\d{2})(\/|-|\s|\\)(\d{1,2})(\/|-|\s|\\)(\d{4})", ErrorMessage ="Por favor introduza a data de nascimento no formato dd/mm/aaaa")]
+        [RegularExpression(@"(\d{1,2})(\/|-|\s|\\)(\d{1,2})(\/|-|\s|\\)(\d{4})", ErrorMessage ="Por favor introduza a data de nascimento no formato dd/mm/aaaa")]
         [Display(Name ="Data de Nascimento")]
         public string DataNascimento { get; set; }
 
