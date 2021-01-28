@@ -21,13 +21,33 @@ namespace SiteDAWMVC.Controllers
 
             Formacao formacao = new Formacao()
             {
-                Nome = "UpSkill"
+                Nome = "Formação"
+            };
+
+            Experiencia experiencia = new Experiencia() 
+            { 
+                Nome = "Experiencia"
+            };
+
+            CompetenciasPessoais competenciasPessoais = new CompetenciasPessoais()
+            {
+                Comptencia = "Competência",
+                Observacoes = "Obs"
+            };
+
+            CompetenciasDigitais competenciasDigitais = new CompetenciasDigitais()
+            { 
+                Linguagem = "Linguagem",
+                Nivel = "Nível"
             };
 
             CvViewModel cvViewModel = new CvViewModel()
             {
                 DadosPessoais = dadosPessoais,
-                Formacao = formacao
+                Formacao = formacao,
+                Experiencia = experiencia,
+                CompetenciasPessoais = competenciasPessoais,
+                CompetenciasDigitais = competenciasDigitais
             };
 
             return View(cvViewModel);
