@@ -25,23 +25,26 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Linguagem)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nivel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DadosPessoais.DadosPessoaisId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CompetenciasDigitaisId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CompetenciasDigitaisId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CompetenciasDigitaisId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Linguagem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nivel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DadosPessoais.DadosPessoaisId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CompetenciasDigitaisId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CompetenciasDigitaisId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CompetenciasDigitaisId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<a class= "btn btn-danger" asp-action = "Index" asp-controller = "CvViewModel" > Voltar </a>
