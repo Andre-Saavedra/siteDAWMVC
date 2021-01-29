@@ -18,6 +18,7 @@
 <div>
     E-mail: @Model.DadosPessoais.Email
 </div>
+<a asp-action="Index" asp-controller="DadosPessoais">Editar</a>
 
 <div>
     <h3>Formação</h3>
@@ -25,6 +26,7 @@
 <div>
     Formação: @Model.Formacao.Nome
 </div>
+<a asp-action="Index" asp-controller="Formacao">Editar</a>
 
 <div>
     <h3>Experiência</h3>
@@ -32,6 +34,7 @@
 <div>
     Experiencia: @Model.Experiencia.Nome
 </div>
+<a asp-action="Index" asp-controller="Experiencia">Editar</a>
 
 <div>
     <h3>Competências Pessoais</h3>
@@ -42,6 +45,7 @@
 <div>
     Observações: @Model.CompetenciasPessoais.Observacoes
 </div>
+<a asp-action="Index" asp-controller="CompetenciasPessoais">Editar</a>
 
 <div>
     <h3>Competência Digitais</h3>
@@ -52,3 +56,4 @@
 <div>
     Nível: @Model.CompetenciasDigitais.Nivel
 </div>
+<a asp-action="Index" asp-controller="CompetenciasDigitais">Editar</a>

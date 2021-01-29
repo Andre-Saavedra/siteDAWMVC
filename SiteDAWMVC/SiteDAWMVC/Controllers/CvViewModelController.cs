@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SiteDAWMVC.Data;
 using SiteDAWMVC.Models;
 using System;
 using System.Collections.Generic;
@@ -9,36 +10,44 @@ namespace SiteDAWMVC.Controllers
 {
     public class CvViewModelController : Controller
     {
+
+        private readonly SiteDbContext _context;
+
+        public CvViewModelController(SiteDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             DadosPessoais dadosPessoais = new DadosPessoais()
             {
-                DadosPessoaisId = 99,
-                Nome = "André",
-                DataNascimento = "99/99/1989",
-                Email = "andre@saavedra.com"
+                //DadosPessoaisId = 99,
+                //Nome = "André",
+                //DataNascimento = "99/99/1989",
+                //Email = "andre@saavedra.com"
             };
 
             Formacao formacao = new Formacao()
             {
-                Nome = "Formação"
+                //Nome = "Formação"
             };
 
             Experiencia experiencia = new Experiencia() 
             { 
-                Nome = "Experiencia"
+                //Nome = "Experiencia"
             };
 
             CompetenciasPessoais competenciasPessoais = new CompetenciasPessoais()
             {
-                Comptencia = "Competência",
-                Observacoes = "Obs"
+                //Comptencia = "Competência",
+                //Observacoes = "Obs"
             };
 
             CompetenciasDigitais competenciasDigitais = new CompetenciasDigitais()
             { 
-                Linguagem = "Linguagem",
-                Nivel = "Nível"
+                //Linguagem = "Linguagem",
+                //Nivel = "Nível"
             };
 
             CvViewModel cvViewModel = new CvViewModel()
