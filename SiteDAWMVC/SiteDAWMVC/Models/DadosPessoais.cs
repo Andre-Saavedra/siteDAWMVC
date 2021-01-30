@@ -31,6 +31,6 @@ namespace SiteDAWMVC.Models
         [EmailAddress]
         [Display(Name ="E-mail")]
         public string Email { get; set; }
-
+       
     }
 }
