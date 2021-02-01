@@ -32,15 +32,6 @@ namespace SiteDAWMVC
         Configuration.GetConnectionString("ApplicationDb")));
 
             services.AddIdentity<IdentityUser, IdentityRole>(options => {
-                // Sign in
-                options.SignIn.RequireConfirmedAccount = false;
-
-                // Password
-                options.Password.RequireDigit = true;
-                options.Password.RequireLowercase = true;
-                options.Password.RequiredLength = 8;
-                options.Password.RequiredUniqueChars = 6;
-                options.Password.RequireUppercase = true;
 
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
