@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+
+@{
+    ViewBag.Title = "Lista de funções";
+}
+
+<h1>Lista de funções</h1>
+
+@if (
+Model.Any())
+{
+    <a class="btn btn-primary mb-3" style="width:auto" asp-action="CriaRole"
+       asp-controller="Admin">Nova função</a>
+
+    foreach(var role in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                Função
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@role.Name</h5>
+            </div>
+            <div class="card-footer">
+                <div class="form-group row">
+                    <a class="btn btn-primary" asp-action="EditaRole" asp-controller="Admin" asp-route-id="@role.Id" style="width:auto;margin-right:5px">Editar</a>
+
+
+                    <form asp-action="ApagaRole" asp-route-id="@role.Id">
+
+                        <button type="submit" class="btn btn-danger" style="width:auto">Eliminar</button>
+
+                    </form>
+                </div>
+            </div>
+        
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            Ainda não existem funções
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Usa o botão abaixo para criar uma nova função
+            </h5>
+            <a class="btn btn-primary" style="width:auto"
+               asp-controller="Admin" asp-action="CriaRole">
+                Criar função
+            </a>
+        </div>
+    </div>
+}

@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace SiteDAWMVC.Models
 {
-    public class Utilizadores
+    public class Utilizadores 
     {
+        [Key]
+        public string Id { get; set; }
+
         [Required]
         [StringLength(200)]
         public string Name { get; set; }

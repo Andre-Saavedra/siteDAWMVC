@@ -31,7 +31,8 @@ namespace SiteDAWMVC
     options.UseSqlServer(
         Configuration.GetConnectionString("ApplicationDb")));
 
-            services.AddIdentity<IdentityUser, IdentityRole>(options => {
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
 
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()

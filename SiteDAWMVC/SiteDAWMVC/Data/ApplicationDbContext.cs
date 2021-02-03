@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SiteDAWMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,7 @@ namespace SiteDAWMVC.Data
             : base(options)
         {
         }
+
+        public DbSet<Utilizadores> Utilizadores { get; set; }
     }
 }

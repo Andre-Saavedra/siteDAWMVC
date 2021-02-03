@@ -33,8 +33,8 @@ namespace SiteDAWMVC.Controllers
                 //Nome = "Formação"
             };
 
-            Experiencia experiencia = new Experiencia() 
-            { 
+            Experiencia experiencia = new Experiencia()
+            {
                 //Nome = "Experiencia"
             };
 
@@ -45,7 +45,7 @@ namespace SiteDAWMVC.Controllers
             };
 
             CompetenciasDigitais competenciasDigitais = new CompetenciasDigitais()
-            { 
+            {
                 //Linguagem = "Linguagem",
                 //Nivel = "Nível"
             };
