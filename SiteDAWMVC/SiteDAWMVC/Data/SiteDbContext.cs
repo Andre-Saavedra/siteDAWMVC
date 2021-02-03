@@ -11,6 +11,10 @@ namespace SiteDAWMVC.Data
 {
     public class SiteDbContext : DbContext
     {
+        public SiteDbContext()
+        {
+        }
+
         public SiteDbContext(DbContextOptions<SiteDbContext> options) : base (options)
         {
 
