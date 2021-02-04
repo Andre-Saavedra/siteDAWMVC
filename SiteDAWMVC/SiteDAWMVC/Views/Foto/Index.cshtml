@@ -22,20 +22,23 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FotoNome)
-            </td>
-            <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.FotoId">Editar</a> |
-                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.FotoId">Detalhes</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.FotoId">Apagar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FotoNome)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.FotoId">Editar</a> |
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.FotoId">Detalhes</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.FotoId">Apagar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<a class="btn btn-danger" asp-action="Index" asp-controller="CvViewModel"> Voltar </a>

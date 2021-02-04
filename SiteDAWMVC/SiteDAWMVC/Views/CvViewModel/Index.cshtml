@@ -11,7 +11,12 @@
         {
             <img src="@("~/img/"+foto.FotoNome)" asp-append-version="true" width="250" height="250" />
         }
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="btn btn-primary" asp-action="Index" asp-controller="Foto">Editar</a>
+        }
     </div>
+
     <div class="col-lg-6">
         <div>
             <h3 class="mt-5" style="color:cornflowerblue">Dados Pessoais</h3>
