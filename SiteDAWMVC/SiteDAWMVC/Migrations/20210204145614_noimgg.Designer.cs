@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SiteDAWMVC.Data;
 
 namespace SiteDAWMVC.Migrations
 {
     [DbContext(typeof(SiteDbContext))]
-    partial class SiteDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210204145614_noimgg")]
+    partial class noimgg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -148,24 +150,6 @@ namespace SiteDAWMVC.Migrations
                     b.HasKey("FotoId");
 
                     b.ToTable("Fotos");
-                });
-
-            modelBuilder.Entity("SiteDAWMVC.Models.HomeBg", b =>
-                {
-                    b.Property<int>("HomeBgId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("HomeBgNome")
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Titulo")
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("HomeBgId");
-
-                    b.ToTable("HomeBg");
                 });
 
             modelBuilder.Entity("SiteDAWMVC.Models.CompetenciasDigitais", b =>

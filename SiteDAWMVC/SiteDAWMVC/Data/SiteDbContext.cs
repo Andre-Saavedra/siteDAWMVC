@@ -28,6 +28,7 @@ namespace SiteDAWMVC.Data
         public DbSet<Experiencia> Experiencia { get; set; }
         public DbSet<Formacao> Formacao { get; set; }
         public DbSet<Foto> Fotos { get; set; }
+        public DbSet<HomeBg> HomeBg { get; set; }
 
     }
 }

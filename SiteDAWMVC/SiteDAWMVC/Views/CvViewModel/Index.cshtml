@@ -5,48 +5,50 @@
 }
 
 <h1 style="color:cornflowerblue">Curriculum</h1>
+<div class="row">
+    <div class="col-lg-6">
+        @foreach (var foto in Model.Foto)
+        {
+            <img src="@("~/img/"+foto.FotoNome)" asp-append-version="true" width="250" height="250" />
+        }
+    </div>
+    <div class="col-lg-6">
+        <div>
+            <h3 class="mt-5" style="color:cornflowerblue">Dados Pessoais</h3>
+        </div>
 
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data de Nascimento</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telemóvel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @foreach (var dadosPessoais in Model.DadosPessoais)
+                    {
+                        <td>@dadosPessoais.Nome</td>
+                        <td>@dadosPessoais.DataNascimento</td>
+                        <td>@dadosPessoais.Email</td>
+                        <td>@dadosPessoais.Telemovel</td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="btn btn-primary" asp-action="Index" asp-controller="DadosPessoais">Editar</a>
+        }
 
-@foreach(var foto in Model.Foto)
-{
-<img src="@("~/img/"+foto.FotoNome)" asp-append-version="true" width="250" height="250" />
-}
-
-<div>
-    <h3 class="mt-5" style="color:cornflowerblue">Dados Pessoais</h3>
+    </div>
 </div>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Data de Nascimento</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">Telemóvel</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            @foreach (var dadosPessoais in Model.DadosPessoais)
-            {
-                <td>@dadosPessoais.Nome</td>
-                <td>@dadosPessoais.DataNascimento</td>
-                <td>@dadosPessoais.Email</td>
-                <td>@dadosPessoais.Telemovel</td>
-            }
-        </tr>
-    </tbody>
-</table>
-@if (User.IsInRole("Admin"))
-{
-    <a class="btn btn-primary" asp-action="Index" asp-controller="DadosPessoais">Editar</a>
-}
-<td></td>
-
 <div class="row">
     <div class="col-lg-6">
         <div>
-            <h3 class="mt-5" style="color:cornflowerblue">Formaçâo</h3>
+            <h3 class="mt-5" style="color:cornflowerblue">Formação</h3>
         </div>
         <table class="table table-striped">
             <thead>
