@@ -4,33 +4,34 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1 style="color:cornflowerblue">Detalhes</h1>
 
 <div>
-    <h4>CompetenciasDigitais</h4>
+    <h4>Competencias Digitais</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Linguagem)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Linguagem)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nivel)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nivel)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DadosPessoais)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DadosPessoaisId)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DadosPessoais.DadosPessoaisId)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DadosPessoaisId)
         </dd>
+
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.CompetenciasDigitaisId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.CompetenciasDigitaisId">Editar</a> |
+    <a asp-action="Index">Voltar</a>
 </div>

@@ -4,12 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 style="color:cornflowerblue">Competências Digitais</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Criar</a>
 </p>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
@@ -18,10 +18,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.Nivel)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DadosPessoais)
-            </th>
             <th></th>
+           
         </tr>
     </thead>
     <tbody>
@@ -34,13 +32,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Nivel)
                 </td>
+
                 <td>
-                    @Html.DisplayFor(modelItem => item.DadosPessoais.DadosPessoaisId)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.CompetenciasDigitaisId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.CompetenciasDigitaisId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.CompetenciasDigitaisId">Delete</a>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.CompetenciasDigitaisId">Editar</a> |
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.CompetenciasDigitaisId">Detalhes</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CompetenciasDigitaisId">Apagar</a>
                 </td>
             </tr>
         }

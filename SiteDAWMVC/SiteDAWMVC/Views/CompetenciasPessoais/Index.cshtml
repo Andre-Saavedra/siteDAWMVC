@@ -4,47 +4,43 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 style="color:cornflowerblue">Competências Pessoais</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Criar</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Comptencia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Observacoes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DadosPessoais)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div>
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Comptencia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Observacoes)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DadosPessoais.DadosPessoaisId)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.CompetenciasPessoaisId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.CompetenciasPessoaisId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.CompetenciasPessoaisId">Delete</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comptencia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Observacoes)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comptencia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Observacoes)
+                    </td>
 
+                    <td>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.CompetenciasPessoaisId">Editar</a> |
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.CompetenciasPessoaisId">Detalhes</a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CompetenciasPessoaisId">Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 <a class= "btn btn-danger" asp-action = "Index" asp-controller = "CvViewModel" > Voltar </a>

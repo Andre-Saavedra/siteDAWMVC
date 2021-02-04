@@ -4,13 +4,19 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Curriculum</h1>
+<h1 style="color:cornflowerblue">Curriculum</h1>
+
+
+@foreach(var foto in Model.Foto)
+{
+<img src="@("~/img/"+foto.FotoNome)" asp-append-version="true" width="250" height="250" />
+}
 
 <div>
-    <h3 class="mt-5">Dados Pessoais</h3>
+    <h3 class="mt-5" style="color:cornflowerblue">Dados Pessoais</h3>
 </div>
 
-<table class="table table-primary table-striped" >
+<table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">Nome</th>
@@ -31,15 +37,18 @@
         </tr>
     </tbody>
 </table>
-<a class="btn btn-primary" asp-action="Index" asp-controller="DadosPessoais">Editar</a>
+@if (User.IsInRole("Admin"))
+{
+    <a class="btn btn-primary" asp-action="Index" asp-controller="DadosPessoais">Editar</a>
+}
 <td></td>
 
 <div class="row">
     <div class="col-lg-6">
         <div>
-            <h3 class="mt-5">Formaçâo</h3>
+            <h3 class="mt-5" style="color:cornflowerblue">Formaçâo</h3>
         </div>
-        <table class="table table-primary table-striped">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Formação</th>
@@ -54,15 +63,17 @@
                 }
             </tbody>
         </table>
-        <a class="btn btn-primary" asp-action="Index" asp-controller="Formacao">Editar</a>
-
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="btn btn-primary" asp-action="Index" asp-controller="Formacao">Editar</a>
+        }
     </div>
 
     <div class="col-lg-6">
         <div>
-            <h3 class="mt-5">Experiência</h3>
+            <h3 class="mt-5" style="color:cornflowerblue">Experiência</h3>
         </div>
-        <table class="table table-primary table-striped">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Experiência</th>
@@ -72,19 +83,22 @@
                 @foreach (var experiencia in Model.Experiencia)
                 {
                     <tr>
-                        <td>@experiencia.Nome</td>
+                        <td>@experiencia.Nome </td>
                     </tr>
                 }
             </tbody>
         </table>
-        <a class="btn btn-primary" asp-action="Index" asp-controller="Experiencia">Editar</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="btn btn-primary" asp-action="Index" asp-controller="Experiencia">Editar</a>
+        }
     </div>
 </div>
 
 <div>
-    <h3 class="mt-5">Competencias Pessoais</h3>
+    <h3 class="mt-5" style="color:cornflowerblue">Competências Pessoais</h3>
 </div>
-<table class="table table-primary table-striped">
+<table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">Competencia</th>
@@ -101,12 +115,14 @@
         }
     </tbody>
 </table>
-<a class="btn btn-primary" asp-action="Index" asp-controller="CompetenciasPessoais">Editar</a>
-
+@if (User.IsInRole("Admin"))
+{
+    <a class="btn btn-primary" asp-action="Index" asp-controller="CompetenciasPessoais">Editar</a>
+}
 <div>
-    <h3 class="mt-5">Competencias Digitais</h3>
+    <h3 class="mt-5" style="color:cornflowerblue">Competências Digitais</h3>
 </div>
-<table class="table table-primary table-striped">
+<table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">Linguagem</th>
@@ -123,7 +139,10 @@
         }
     </tbody>
 </table>
-<a class="btn btn-primary" asp-action="Index" asp-controller="CompetenciasDigitais">Editar</a>
+@if (User.IsInRole("Admin"))
+{
+    <a class="btn btn-primary" asp-action="Index" asp-controller="CompetenciasDigitais">Editar</a>
+}
 
 
 
