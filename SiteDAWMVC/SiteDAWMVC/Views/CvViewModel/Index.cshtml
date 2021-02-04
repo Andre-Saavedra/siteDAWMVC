@@ -4,9 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 style="color:cornflowerblue">Curriculum</h1>
+<h1 class="text-center mb-5" style="color:cornflowerblue;">Curriculum</h1>
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-6 text-center">
         @foreach (var foto in Model.Foto)
         {
             <img src="@("~/img/"+foto.FotoNome)" asp-append-version="true" width="250" height="250" />
@@ -20,10 +20,10 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Data de Nascimento</th>
-                    <th scope="col">E-mail</th>
-                    <th scope="col">Telemóvel</th>
+                    <th style="color:cornflowerblue" scope="col">Nome</th>
+                    <th style="color:cornflowerblue" scope="col">Data de Nascimento</th>
+                    <th style="color:cornflowerblue" scope="col">E-mail</th>
+                    <th style="color:cornflowerblue" scope="col">Telemóvel</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,7 +53,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Formação</th>
+                    <th style="color:cornflowerblue" scope="col">Formação</th>
                 </tr>
             </thead>
             <tbody>
@@ -78,7 +78,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Experiência</th>
+                    <th style="color:cornflowerblue" scope="col">Experiência</th>
                 </tr>
             </thead>
             <tbody>
@@ -103,8 +103,8 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">Competencia</th>
-            <th scope="col">Obsevações</th>
+            <th style="color:cornflowerblue" scope="col">Competencia</th>
+            <th style="color:cornflowerblue" scope="col">Obsevações</th>
         </tr>
     </thead>
     <tbody>
@@ -127,8 +127,8 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">Linguagem</th>
-            <th scope="col">Nível</th>
+            <th style="color:cornflowerblue" scope="col">Linguagem</th>
+            <th style="color:cornflowerblue" scope="col">Nível</th>
         </tr>
     </thead>
     <tbody>
